@@ -1,0 +1,168 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS C:\Users\Hp> f:
+PS F:\> cd "F:\AdityaLinge_3468"
+PS F:\AdityaLinge_3468> git --version
+git version 2.55.0.windows.5
+PS F:\AdityaLinge_3468> git config --global user.name "adityalinge"
+PS F:\AdityaLinge_3468> git config --global user.email "adityalinge012@gmail.com"
+PS F:\AdityaLinge_3468> git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=schannel
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+user.name=adityalinge
+user.email=adityalinge012@gmail.com
+PS F:\AdityaLinge_3468> git init
+Initialized empty Git repository in F:/AdityaLinge_3468/.git/
+PS F:\AdityaLinge_3468> gain
+PS F:\AdityaLinge_3468> git add "load-reit remote add origin "https://github.com/adityalinge012/house-prediction-model.git"
+PS F:\AdityaLinge_3468> git branch -M mad-dataset.py"
+PS F:\AdityaLinge_3468> git add "splitting-dataset.py"
+PS F:\AdityaLinge_3468> git add "implement-model.py"
+PS F:\AdityaLinge_3468> git add "house-dataset.xlsx"
+PS F:\AdityaLinge_3468> git add "README.md.txt"
+PS F:\AdityaLinge_3468> git commit -m "added-files-to-repo"
+[main (root-commit) 3181118] added-files-to-repo
+ 5 files changed, 375 insertions(+)
+ create mode 100644 README.md.txt
+ create mode 100644 house-dataset.xlsx
+ create mode 100644 implement-model.py
+ create mode 100644 load-read-dataset.py
+ create mode 100644 splitting-dataset.py
+PS F:\AdityaLinge_3468> git log --oneline
+3181118 (HEAD -> main) added-files-to-repo
+PS F:\AdityaLinge_3468> git switch -c "developer"
+Switched to a new branch 'developer'
+PS F:\AdityaLinge_3468> git switch -c "leader"
+Switched to a new branch 'leader'
+PS F:\AdityaLinge_3468> git switch -c "data-analyst"
+Switched to a new branch 'data-analyst'
+PS F:\AdityaLinge_3468> git branch
+* data-analyst
+  developer
+  leader
+  main
+PS F:\AdityaLinge_3468> git switch "developer"
+Switched to branch 'developer'
+PS F:\AdityaLinge_3468> code "load-read-dataset.py"
+PS F:\AdityaLinge_3468> git switch "leader"
+M       load-read-dataset.py
+Switched to branch 'leader'
+PS F:\AdityaLinge_3468> code "implement-model.py"
+PS F:\AdityaLinge_3468> git switch "data-analyst"
+M       implement-model.py
+M       load-read-dataset.py
+Switched to branch 'data-analyst'
+PS F:\AdityaLinge_3468> code "splitting-dataset.py"
+PS F:\AdityaLinge_3468> git switch main
+M       implement-model.py
+M       load-read-dataset.py
+M       splitting-dataset.py
+Switched to branch 'main'
+PS F:\AdityaLinge_3468> git switch "developer"
+M       implement-model.py
+M       load-read-dataset.py
+M       splitting-dataset.py
+Switched to branch 'developer'
+PS F:\AdityaLinge_3468> git add "load-read-dataset.py"
+PS F:\AdityaLinge_3468> git switch "leader"
+M       implement-model.py
+M       load-read-dataset.py
+M       splitting-dataset.py
+Switched to branch 'leader'
+PS F:\AdityaLinge_3468> git switch "leader"
+M       implement-model.py
+M       load-read-dataset.py
+M       splitting-dataset.py
+Already on 'leader'
+PS F:\AdityaLinge_3468> git commit -m "leader-changes"
+[leader b477026] leader-changes
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+PS F:\AdityaLinge_3468> git switch "developer"
+M       implement-model.py
+M       splitting-dataset.py
+Switched to branch 'developer'
+PS F:\AdityaLinge_3468> git commit -m "developer-changes"
+On branch developer
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   implement-model.py
+        modified:   splitting-dataset.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS F:\AdityaLinge_3468> git add "load-read-dataset.py"
+PS F:\AdityaLinge_3468> git commit -m "developer-changes"
+On branch developer
+PS F:\AdityaLinge_3468> git switch "data-analyst"
+M       implement-model.py
+M       splitting-dataset.py
+Switched to branch 'data-analyst'
+PS F:\AdityaLinge_3468> git add "splitting-dataset.py"
+PS F:\AdityaLinge_3468> git commit -m "dataAnalyse"
+[data-analyst ac46a81] dataAnalyse
+ 1 file changed, 1 insertion(+)
+PS F:\AdityaLinge_3468> git log --oneline --all --graph
+* ac46a81 (HEAD -> data-analyst) dataAnalyse
+| * b477026 (leader) leader-changes
+|/
+* 3181118 (main, developer) added-files-to-repo 
+
+PS F:\AdityaLinge_3468> git branch
+* data-analyst
+  developer
+  leader
+  main
+
+PS F:\AdityaLinge_3468> git switch main
+Switched to branch 'main'
+
+PS F:\AdityaLinge_3468> git log --oneline --all --graph
+* ac46a81 (data-analyst) dataAnalyse
+| * b477026 (leader) leader-changes
+|/
+* 3181118 (HEAD -> main, developer) added-files-to-repo
+
+PS F:\AdityaLinge_3468> git merge main
+Already up to date.
+
+PS F:\AdityaLinge_3468> git ls-tree -r main --name-only
+README.md.txt
+house-dataset.xlsx
+implement-model.py
+load-read-dataset.py
+splitting-dataset.py
+
+PS F:\AdityaLinge_3468> git diff main "leader"
+[Output depends on the file differences between main and leader]
+
+PS F:\AdityaLinge_3468> git branch -d "leader"
+error: the branch 'leader' is not fully merged
+
+PS F:\AdityaLinge_3468> git remote -v
+origin  https://github.com/adityalinge012/house-prediction-model.git (fetch)
+origin  https://github.com/adityalinge012/house-prediction-model.git (push)
+
+PS F:\AdityaLinge_3468> git push
+fatal: The current branch main has no upstream branch.
+
+PS F:\AdityaLinge_3468> git pull
+There is no tracking information for the current branch.
+
+PS F:\AdityaLinge_3468> git clone "https://github.com/adityalinge012/house-prediction-model.git"
+Cloning into 'house-prediction-model'...
+remote: Enumerating objects: ...
+remote: Counting objects: 100% (...)
+Receiving objects: 100% (...)
+Resolving deltas: 100% (...)
