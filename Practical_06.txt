@@ -1,0 +1,89 @@
+PS F:\AdityaLinge_3468\Practical_06> python Practical_06.py 
+MLflow version: 3.17.2
+MLflow tracking URI: sqlite:///mlflow.db
+Experiment: Practical_5_Model_Comparison
+
+Dataset shape: (569, 30)
+Number of features: 30
+Target classes: ['malignant' 'benign']
+
+First five rows:
+   mean radius  mean texture  mean perimeter  mean area  mean smoothness  ...  worst compactness  worst concavity  worst concave points  worst symmetry  worst fractal dimension
+0        17.99         10.38          122.80     1001.0          0.11840  ...             0.6656           0.7119                0.2654          0.4601                  0.11890
+1        20.57         17.77          132.90     1326.0          0.08474  ...             0.1866           0.2416                0.1860          0.2750                  0.08902
+2        19.69         21.25          130.00     1203.0          0.10960  ...             0.4245           0.4504                0.2430          0.3613                  0.08758
+3        11.42         20.38           77.58      386.1          0.14250  ...             0.8663           0.6869                0.2575          0.6638                  0.17300
+4        20.29         14.34          135.10     1297.0          0.10030  ...             0.2050           0.4000                0.1625          0.2364                  0.07678
+
+[5 rows x 30 columns]
+
+Training samples: 455
+Testing samples: 114
+2026/10/26 16:11:27 WARNING mlflow.models.model: `artifact_path` is deprecated. Please use `name` instead.
+
+Model: Logistic_Regression
+Accuracy: 0.9825
+Precision: 0.9861
+Recall: 0.9861
+F1-score: 0.9861
+Run ID: 0efec588faad470883709ba81e5a0b48
+2026/10/26 16:11:32 WARNING mlflow.models.model: `artifact_path` is deprecated. Please use `name` instead.
+
+Model: Random_Forest
+Accuracy: 0.9561
+Precision: 0.9589
+Recall: 0.9722
+F1-score: 0.9655
+Run ID: 4b4f789b7121415e92465fe9d857a1bb
+
+========== MODEL COMPARISON ==========
+         model_name  accuracy  precision   recall  f1_score                           run_id
+Logistic_Regression  0.982456   0.986111 0.986111  0.986111 0efec588faad470883709ba81e5a0b48
+      Random_Forest  0.956140   0.958904 0.972222  0.965517 4b4f789b7121415e92465fe9d857a1bb
+
+========== BEST MODEL ==========
+Best Model: Logistic_Regression
+Best Accuracy: 0.9825
+Best Run ID: 0efec588faad470883709ba81e5a0b48
+Successfully registered model 'Practical5BestClassifier'.
+2026/10/26 16:12:12 WARNING mlflow.tracking._model_registry.fluent: Run with id 0efec588faad470883709ba81e5a0b48 has no artifacts at artifact path 'model', registering model based on models:/m-9b8c808e8fec43ef9b061371d92b287b instead
+Created version '1' of model 'Practical5BestClassifier'.
+
+========== MODEL REGISTRATION ==========
+Model registered successfully!
+Registered model: Practical5BestClassifier
+Model version: 1
+
+========== REGISTERED MODEL TEST ==========
+Predictions: [0 1 0 1 0]
+Actual values: [0 1 0 1 0]
+Predicted classes: ['malignant' 'benign' 'malignant' 'benign' 'malignant']
+Actual classes: ['malignant' 'benign' 'malignant' 'benign' 'malignant']
+
+========== MLflow EXPERIMENT RUNS ==========
+   tags.mlflow.runName  metrics.accuracy  metrics.precision  metrics.recall  metrics.f1_score                           run_id
+   Logistic_Regression          0.982456           0.986111        0.986111          0.986111 0efec588faad470883709ba81e5a0b48
+   Logistic_Regression          0.982456           0.986111        0.986111          0.986111 013b6119de4046a89840796bd635a0ae
+         Random_Forest          0.956140           0.958904        0.972222          0.965517 4b4f789b7121415e92465fe9d857a1bb
+         Random_Forest          0.956140           0.958904        0.972222          0.965517 b9a5842ae91f476c83cad93852120cd1
+Model_Comparison_Chart               NaN                NaN             NaN               NaN 6a8fe1a0ff6840f58ff52bb42e8fd0c0
+
+Practical 5 completed successfully!
+Tracking database: mlflow.db
+Registered model: Practical5BestClassifier
+Best model: Logistic_Regression
+
+PS F:\AdityaLinge_3468\Practical_06> python -m mlflow ui --backend-store-uri "sqlite:///mlflow.db" --port 5000
+Registry store URI not provided. Using backend store URI.
+[MLflow] Security middleware enabled with default settings (localhost-only). To allow connections from other hosts, use --host 0.0.0.0 and configure --allowed-hosts and --cors-allowed-origins.
+2026/10/26 16:22:47 WARNING mlflow.server: MLflow job execution requirements not met (MLflow job backend does not support Windows system.). Server will start without job execution support. Errors will be surfaced at job invocation time.
+2026/10/26 16:22:47 INFO:     Uvicorn running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+2026/10/26 16:22:47 INFO:     Started parent process [11380]
+C:\Users\Hp\AppData\Local\Programs\Python\Python314\Lib\site-packages\mlflow\server\fastapi_app.py:23: StarletteDeprecationWarning: starlette.middleware.wsgi is deprecated and will be removed in a future release. Please refer to https://github.com/abersheeran/a2wsgi as a replacement.
+  from starlette.middleware.wsgi import WSGIResponder, build_environ
+C:\Users\Hp\AppData\Local\Programs\Python\Python314\Lib\site-packages\mlflow\server\fastapi_app.py:23: StarletteDeprecationWarning: starlette.middleware.wsgi is deprecated and will be removed in a future release. Please refer to https://github.com/abersheeran/a2wsgi as a replacement.
+  from starlette.middleware.wsgi import WSGIResponder, build_environ
+C:\Users\Hp\AppData\Local\Programs\Python\Python314\Lib\site-packages\mlflow\server\fastapi_app.py:23: StarletteDeprecationWarning: starlette.middleware.wsgi is deprecated and will be removed in a future release. Please refer to https://github.com/abersheeran/a2wsgi as a replacement.
+  from starlette.middleware.wsgi import WSGIResponder, build_environ
+C:\Users\Hp\AppData\Local\Programs\Python\Python314\Lib\site-packages\mlflow\server\fastapi_app.py:23: StarletteDeprecationWarning: starlette.middleware.wsgi is deprecated and will be removed in a future release. Please refer to https://github.com/abersheeran/a2wsgi as a replacement.
+  from starlette.middleware.wsgi import WSGIResponder, build_environ
